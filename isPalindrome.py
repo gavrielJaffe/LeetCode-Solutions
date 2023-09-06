@@ -9,17 +9,17 @@ class Solution:
         # Test for evens
         if len(x) % 2 == 0 : 
             for i in range((half_size)):
-                other_three = len(x)-1 - i 
-                if x[i] == x[other_three]:
+                remainder = len(x)-1 - i 
+                if x[i] == x[remainder]:
                     continue
                 else:
                     return False
         # Test for odds
         elif (len(x) % 2) == 1 :
             for i in range((half_size)):
-                other_three = len(x)-1 - i 
-                if x[i] == x[other_three]:
-                    print(f'comeper {x[i]}-{x[other_three]}')
+                remainder = len(x)-1 - i 
+                if x[i] == x[remainder]:
+                    print(f'comeper {x[i]}-{x[remainder]}')
                     continue
                 else:
                     return False
