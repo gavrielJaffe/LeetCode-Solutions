@@ -1,6 +1,6 @@
 
 
-def remove_sapaces(text):
+def remove_spaces(text):
     temp = []
     for i in text:
         if i == " ":
@@ -16,5 +16,5 @@ def remove_sapaces(text):
 
 
 text = "we are song of Kings"
-ans  = remove_sapaces(text)
+ans  = remove_spaces(text)
 print('ans', ans)
