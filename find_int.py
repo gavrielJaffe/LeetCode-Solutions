@@ -1,5 +1,5 @@
 
-missing_int = [1,2,3,9,5,6,7,8]
+missing_int = [1,2,3,9,5,6,7,8] # 4 is missing
 
 def find_missing_int(lst):
     sum_in_list = sum(lst)
