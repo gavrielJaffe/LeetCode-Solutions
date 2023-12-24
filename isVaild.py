@@ -8,12 +8,15 @@ def remove(lst):
     # Remove key.
     key = lst.pop(0)
 
-
-    # Remove value,by the index
-    value = prehntsis[key]
-    index = lst.index(value)
-    lst.pop(index)
-    print(f'You entered {index}, which is not a in list number.')
+    try:
+        # Remove value,by the index
+        value = prehntsis[key]
+        index = lst.index(value)
+        lst.pop(index)
+        print(f'You entered {index}, which is not a in list number.')
+    except ValueError as ve:
+        print(f've',{ve})
+        return False
 
     # sent the new list back 
     return lst
@@ -39,11 +42,13 @@ class Solution:
             lst = remove(lst)
             if lst == True:
                 return True
+            elif lst == False:
+                break
         return False
     
 
 sol = Solution()
-test_string = '(]'
+test_string = '[('
 res = sol.isValid(test_string)
 print('')
 
