@@ -1,5 +1,5 @@
 def remove(lst):
-    prehntsis = { "(":")" , ")":"(" , "[" : "]" , "]":"[" ,"{": "}", "}": "{" }
+    parenthesis = { "(":")" , ")":"(" , "[" : "]" , "]":"[" ,"{": "}", "}": "{" }
     print('lst', lst)
     print('********************************************************')
     if (len(lst) == 0):
@@ -10,7 +10,7 @@ def remove(lst):
 
     try:
         # Remove value,by the index
-        value = prehntsis[key]
+        value = parenthesis[key]
         index = lst.index(value)
         lst.pop(index)
         print(f'You entered {index}, which is not a in list number.')
@@ -48,7 +48,7 @@ class Solution:
     
 
 sol = Solution()
-test_string = '[('
+test_string = '([)]' # res need to be false
 res = sol.isValid(test_string)
 print('')
 
