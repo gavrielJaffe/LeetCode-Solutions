@@ -1,31 +1,36 @@
 
 class Solution:
     def reverse(self, x: int) -> int:
-        if (x > 0):
-            operators = "+"
-        elif (x < 0):
-            operators = "-"
-            
-        # Mission if there is "-" operator in the start remvoe it . 
-        print('operators', operators)
-
-        str_x = (str(x))[-1::]
-        str_x = str(x)
+        str_x  = str(x)
         print(str_x)
 
-        
-        # If x has a zero in the end , remvoe the zero from it. 
+        # Test for zero in the end . 
         if (int(str_x[-1]) == 0):
-            print("we have zero in the start ")
-            str_x = str(x)[:-1:]
+            print('********************************************************')
+            print("last possition is 0 ")
+            print(len(str_x))
+            print("befor" , str_x)
+            str_x = str_x[:len(str_x)-1:]
+            print("after", str_x)
 
+        # Posstive number 
+        if (x > 0):
+            print("it a posstive number")
+            
+            return str_x[::-1]
 
-        return str_x[::-1] # Answer should be in int,not str. 
+        # Nagtive number 
+        elif (x < 0):
+            print("negative number  - ")
+            str_x  = str(x)[1::]
+            return str_x[::-1]
+
+        return None 
 
 
 
 
 
 sol = Solution()
-ans = sol.reverse(-123)
+ans = sol.reverse(1202)
 print('ans', ans)
