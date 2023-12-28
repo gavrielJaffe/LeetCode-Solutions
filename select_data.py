@@ -19,12 +19,10 @@ def selectData(students: pd.DataFrame) -> pd.DataFrame:
     # y = [x for x in students]
     row ,column = [students.shape[0],students.shape[1]]
     print(f'row ,column',{row},{column})
-    y = [i for i in range(len(row))]
+    y = [i for i in range(row)]
     print('y', y)
     if int(students["student_id"][0]) == 101:
         print("asdfasdfasd asdfasdf  adfasdf  asdfasd ")
     
-    # if students["student_id"] == 101:
-        # print("this is the right line")
     return None # 
 print(selectData(students))
