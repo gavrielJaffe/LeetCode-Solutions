@@ -45,7 +45,7 @@ def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
     df = pd.DataFrame(employees)
     return df.iloc[:3] # Only the first 3 rows are displayed.
 
-# Best way to get the first 3 rows
+# Best way: get the first 3 rows , Beats 83.68% of users with Pandas
 def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
     df = pd.DataFrame(employees)
     return df.head(3) # Only the first 3 rows are displayed.
