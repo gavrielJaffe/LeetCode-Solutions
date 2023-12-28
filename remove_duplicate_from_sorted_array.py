@@ -19,8 +19,6 @@ class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         flag = False
         k = 1 
-        # if not nums:
-        #     return 0 
 
         if len(nums) == 1 :
             return int(k)
