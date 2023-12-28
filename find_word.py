@@ -1,8 +1,8 @@
 from typing import List
-# There is a two list of words , you need to find the word in the list . 
+# There is a two list of words , you need to find the word in the list. 
 
 a = ["Apple", "Banana", "Orange", "Grape", "Cherry"]
-b = ["Banana", "Grape","Kiwi","Cherry"] # Cherry , Mango
+b = ["Banana", "Grape","Kiwi","Cherry","Mango"] # Cherry    
 
 
 def find_words(a:List,b:List):

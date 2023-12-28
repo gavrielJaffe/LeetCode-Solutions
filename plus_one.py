@@ -3,17 +3,16 @@ from typing import List
 
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
-        reversed_number = ""
-        for i in digits:
-            reversed_number = str(i) + str(reversed_number)
-        reversed_number = int(reversed_number[::-1]) +1 
-        # Initialize a new list for the result
-        digits = []
-        reversed_number = str(reversed_number)
-        for i in reversed_number:
-            digits.append(int(i))
-        return digits
-
+      integer = 0
+      for i in digits:
+        integer = integer*10 + i
+      integer += 1
+      res = []
+      while integer != 0:
+        res.insert(0, integer % 10)
+        integer = integer//10
+      return res
+    
 sol = Solution()
 answer = sol.plusOne([9])
 print('answer', answer)
