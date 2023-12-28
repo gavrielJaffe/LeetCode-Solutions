@@ -104,6 +104,12 @@ data_player = [
 def getDataframeSize(players: pd.DataFrame) -> List[int]:
     colume_name = ["player_id", "name","age","position","team"]
     df = pd.DataFrame(players,columns=colume_name)
+    return [len(df),len(df.columns)] # [number of rows, number of columns]
+
+# Best way - Beats 76.57%
+def getDataframeSize(players: pd.DataFrame) -> List[int]:
+    colume_name = ["player_id", "name","age","position","team"]
+    df = pd.DataFrame(players,columns=colume_name)
     return [df.shape[0],df.shape[1]] # [number of rows, number of columns]
 
 print(getDataframeSize(data_player))
