@@ -15,14 +15,8 @@ data = [
 students = pd.DataFrame(data)
 
 def selectData(students: pd.DataFrame) -> pd.DataFrame:
-    print(students)
-    # y = [x for x in students]
-    row ,column = [students.shape[0],students.shape[1]]
-    print(f'row ,column',{row},{column})
-    y = [i for i in range(row)]
-    print('y', y)
-    if int(students["student_id"][0]) == 101:
-        print("asdfasdfasd asdfasdf  adfasdf  asdfasd ")
-    
-    return None # 
+    columns_name = ["name","age"]
+    df = students.loc[students['student_id'] == 101][columns_name]
+    return df 
+
 print(selectData(students))
