@@ -19,6 +19,6 @@ def selectData(students: pd.DataFrame) -> pd.DataFrame:
 
 # Best way Beats 95.71% of users with Pandas
 def selectData(students: pd.DataFrame) -> pd.DataFrame:
-    return students.loc[students['student_id'] == 101][["name","age"]]
+    return students[students['student_id'] == 101][["name","age"]]
 
 print(selectData(students))
