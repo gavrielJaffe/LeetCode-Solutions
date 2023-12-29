@@ -16,6 +16,7 @@ students = pd.DataFrame(data)
 def selectData(students: pd.DataFrame) -> pd.DataFrame:
     columns_name = ["name","age"]
     return students.loc[students['student_id'] == 101][columns_name]
+
 # Best way Beats 95.71% of users with Pandas
 def selectData(students: pd.DataFrame) -> pd.DataFrame:
     return students.loc[students['student_id'] == 101][["name","age"]]
