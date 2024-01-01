@@ -36,9 +36,6 @@ Output:
 +------------+------+-----+-------+
 Explanation: 
 The data types of the column grade is converted to int.
-
-
-
 """
 
 data = {
@@ -51,7 +48,6 @@ data = {
 def createDataframe(data):
     return pd.DataFrame(data,columns = ["student_id","name","age","grade"])
 
-
 # Beats 19.38 % of users with Pandas.
 def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
     return students.astype({'grade': 'int'})
@@ -60,7 +56,6 @@ def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
 def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
     students['grade'] = students['grade'].astype(int)
     return students
-
 
 students = createDataframe(data)    
 ans = changeDatatype(students)
