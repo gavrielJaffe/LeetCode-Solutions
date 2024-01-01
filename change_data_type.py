@@ -58,6 +58,7 @@ def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
 
 # Beats 78.36 % of users with Pandas.
 def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
+    students['grade'] = students['grade'].astype(int)
     return students
 
 
