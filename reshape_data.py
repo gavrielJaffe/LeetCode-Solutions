@@ -1,5 +1,4 @@
 import pandas as pd
-import typing
 
 data = [
     {"student_id": 1, "name": "Mason", "age": 8},
