@@ -1,11 +1,18 @@
-a = (1,2)
-a+=(3)
-print(a)
+# a = (1,2)
+# a+=(3)
+# print(a)
 
 
 
-Which South American country is home to the iconic Christ the Redeemer statue, situated atop the Corcovado Mountain in the city of Rio de Janeiro?
- Argentina
- Brazil
- Chile
- Ecuador
+import pandas as pd
+
+data = {
+    'Category': ['A', 'B', 'A', 'B', 'A', 'B'],
+    'Value': [1, 2, 3, 4, 5, 6]
+}
+df = pd.DataFrame(data)
+print(df)
+
+pivot = df.pivot_table(index='Category', values='Value', aggfunc='max')
+pivot = df.pivot_table(index='Category', values='Value', aggfunc='max')
+print(pivot)
