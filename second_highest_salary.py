@@ -12,8 +12,8 @@ data2 = {
 } # Outpot None
 
 data3 = {
-    'id': [1, 2, 3],
-    'salary': [100, 100, 100]
+    'id': [1,2,3,4],
+    'salary': [100, 100, 100,100]
 } # Outpot None
 
 data4 = {
@@ -28,13 +28,18 @@ data5 = {
 } # Outpot 50
 
 
-employee_df = pd.DataFrame(data5)
-print(employee_df)
+employee_df = pd.DataFrame(data3)
 
+    # pass data,data2,data4,data5  
+    # Not pass data3
 def second_highest_salary(employee: pd.DataFrame) -> pd.DataFrame:
+    # find all of the indexes of the max_salary in the df.
     max_salary = employee['salary'].max()
-    max_salary_index = employee['salary'].idxmax()
-    employee = employee.drop([max_salary_index]) # not all of the use cases are falling in. data5 , data4
+    # print(max_salary)
+    indices_of_max_salary = (employee[employee['salary'] == max_salary].index).tolist()
+    # drop of indices_of_max_salary,saved to the df.delete all of the indexes of max_salary from the df.
+    employee = employee.drop(indices_of_max_salary)
+    print(employee)
     employee = employee['salary'].max()
     if max_salary == employee: # in case of two employee in the same salary we would send null
         employee = None
