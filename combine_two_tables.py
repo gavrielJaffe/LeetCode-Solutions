@@ -16,14 +16,7 @@ address_data = {
 address = pd.DataFrame(address_data)
 
 def combine_two_tables(person: pd.DataFrame, address: pd.DataFrame) -> pd.DataFrame:
-    df = pd.merge(person,address,how="outer")
-    indexes = df[df['firstName'].isnull()].index
-    df = df.drop(indexes)
-    df.drop(columns=['personId','addressId'],axis=1,inplace=True)
-    df.fillna('null', inplace=True)
-    new_order = ["firstName","lastName","city","state"]
-    df = df[new_order]
-    return df 
+    return person.merge(address ,on="personId",how="left")[["firstName","lastName","city","state"]]
 
-ans = combine_two_tables(person,address)
-print('', ans)
+ans = combine_two_tables(person, address)
+# print(ans)
