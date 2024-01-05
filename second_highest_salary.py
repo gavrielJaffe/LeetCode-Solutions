@@ -30,15 +30,13 @@ data5 = {
 
 employee_df = pd.DataFrame(data3)
 
-    # pass data,data2,data4,data5  
-    # Not pass data3
 def second_highest_salary(employee: pd.DataFrame) -> pd.DataFrame:
     # find all of the indexes of the max_salary in the df.
     max_salary = employee['salary'].max()
     # print(max_salary)
-    indices_of_max_salary = (employee[employee['salary'] == max_salary].index).tolist()
-    # drop of indices_of_max_salary,saved to the df.delete all of the indexes of max_salary from the df.
-    employee = employee.drop(indices_of_max_salary)
+    indexs_of_max_salary = (employee[employee['salary'] == max_salary].index).tolist()
+    # drop of indexs_of_max_salary,saved to the df.delete all of the indexes of max_salary from the df.
+    employee = employee.drop(indexs_of_max_salary)
     print(employee)
     employee = employee['salary'].max()
     if max_salary == employee: # in case of two employee in the same salary we would send null
@@ -47,3 +45,10 @@ def second_highest_salary(employee: pd.DataFrame) -> pd.DataFrame:
 
 ans = second_highest_salary(employee_df)
 print(ans)
+
+def second_highest_salary(employee: pd.DataFrame) -> pd.DataFrame:
+    max_salary = employee['salary'].max()
+    indexs_of_max_salary = (employee[employee['salary'] == max_salary].index).tolist()
+    employee = employee.drop(indexs_of_max_salary)
+    employee = employee['salary'].max()
+    return pd.DataFrame({employee},columns=["SecondHighestSalary"])
