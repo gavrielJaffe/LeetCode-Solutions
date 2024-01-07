@@ -41,18 +41,13 @@ employee_df = pd.DataFrame(data6)
 def nth_highest_salary(employee: pd.DataFrame , N :int) -> pd.DataFrame:
     for i in range(N-1):
         max_salary = employee['salary'].max()
-        # Find all of the indexes of the max_salary in the df.
         indexs_of_max_salary = (employee[employee['salary'] == max_salary].index).tolist()
-        # Drop rows with indices stored in indices_of_max_salary from the DataFrame
         employee = employee.drop(indexs_of_max_salary)
-
-    if N >= 0:
+    if N > 0:
         employee = employee['salary'].max() # last highest max salary
         return pd.DataFrame({employee},columns=[f"getNthHighestSalary({(N)})"])
-    elif N <= 0:
-        return pd.DataFrame({f"getNthHighestSalary({(N)})": ["null"]})
-
-
-ans = nth_highest_salary(employee_df,-1)
-print('ans', ans)
+    else:
+        return pd.DataFrame({f"getNthHighestSalary({(N)})": [None]})
+ans = nth_highest_salary(employee_df,0)
+print(ans)
 
