@@ -1,18 +1,18 @@
-# a = (1,2)
-# a+=(3)
-# print(a)
+from datetime import datetime, timedelta
 
+def next_day(input_date):
+    # Convert input string to datetime object
+    input_date = datetime.strptime(input_date, '%Y-%m-%d')
 
+    # Calculate the next day by adding one day
+    output_date = input_date + timedelta(days=1)
 
-import pandas as pd
+    # Convert the result back to the string format
+    output_date_str = output_date.strftime('%Y-%m-%d')
 
-data = {
-    'Category': ['A', 'B', 'A', 'B', 'A', 'B'],
-    'Value': [1, 2, 3, 4, 5, 6]
-}
-df = pd.DataFrame(data)
-print(df)
+    return output_date_str
 
-pivot = df.pivot_table(index='Category', values='Value', aggfunc='max')
-pivot = df.pivot_table(index='Category', values='Value', aggfunc='max')
-print(pivot)
+# Example usage:
+input_date = '2021-11-15'
+output_date = next_day(input_date)
+print(f"Input: {input_date}, Output: {output_date}")
