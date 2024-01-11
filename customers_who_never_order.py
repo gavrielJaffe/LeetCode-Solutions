@@ -40,14 +40,20 @@ customers = pd.DataFrame(customers_data)
 orders = pd.DataFrame(orders_data)
 
 
+# def find_customers(customers: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFrame:
+#     ctmr_who_never_order = orders["customerId"].tolist()
+#     ctmr_ids= customers["id"].tolist()
+#     ctmr_ids = [x for x in ctmr_ids if x not in ctmr_who_never_order]
+#     print(ctmr_ids)
+#     filtered_customers = customers[customers['id'].isin((ctmr_ids))]
+#     filtered_customers= filtered_customers.rename(columns = {"name":"Customers"})
+#     return filtered_customers[['Customers']]
+
+
 def find_customers(customers: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFrame:
-    ctmr_who_never_order = orders["customerId"].tolist()
-    ctmr_ids= customers["id"].tolist()
-    ctmr_ids = [x for x in ctmr_ids if x not in ctmr_who_never_order]
-    print(ctmr_ids)
-    filtered_customers = customers[customers['id'].isin((ctmr_ids))]
-    filtered_customers= filtered_customers.rename(columns = {"name":"Customers"})
-    return filtered_customers[['Customers']]
+    df = customers[~customers['id'].isin(orders['customerId'])].rename(columns = {"name":"Customers"})
+    return df [['Customers']]
+
 
 
 ans = find_customers(customers, orders)
