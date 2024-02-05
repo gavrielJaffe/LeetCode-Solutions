@@ -20,7 +20,6 @@ ans = game_analysis(df_activity)
 print(ans)
 
 
-
 # Output : 
 #  player_id | first_login |
 # | --------- | ----------- |
