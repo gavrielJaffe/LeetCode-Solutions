@@ -25,12 +25,8 @@ Output:
 | Dan  | 500   |
 """
 def employee_bonus(employee: pd.DataFrame, bonus: pd.DataFrame) -> pd.DataFrame:
-    print(employee)
     result = pd.merge(employee,bonus, how="left",on="empId")
-    print(result)
-    # take all of the places that is less than 1000 or null in the bounes . 
+    return result[(result['bonus']< 1000) | (result['bonus'].isna())][['name','bonus']]
 
-
-
-
-employee_bonus(df_emp ,df_bonus)
+res = employee_bonus(df_emp ,df_bonus)
+print(res)
