@@ -7,11 +7,17 @@ data = {
 }
 df = pd.DataFrame(data)
 
+# not expected in Leetcode , but give the right output . 
 def find_customer_referee(customer: pd.DataFrame) -> pd.DataFrame:
-    mask = customer['referee_id'] == 2
-    customer = customer[~mask]
-    df = customer[['name']]
-    return df 
+    mask = (customer['referee_id'] == 2)
+    customer = customer[~mask][['name']]
+    return customer
+
+# works 
+def find_customer_referee(customer: pd.DataFrame) -> pd.DataFrame:
+    x = customer[(customer['referee_id'] != 2)][['name']].reset_index()
+    return pd.DataFrame(x[['name']])
 
 ans = find_customer_referee(customer=df)
+print(type(ans))
 print(ans)
