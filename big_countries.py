@@ -9,7 +9,6 @@ data = {
 }
  # need to be in 3 cratieria  
 
-
 df = pd.DataFrame(data)
 
 def big_countries(world: pd.DataFrame) -> pd.DataFrame:
